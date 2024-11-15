@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 function Profile() {
@@ -8,7 +9,7 @@ function Profile() {
           <div className="cont valign">
             <div className="full-width">
               <div className="img">
-                <img src="/assets/imgs/header/profile.jpg" alt="" />
+                <Image src="/assets/imgs/file.png" alt="esrak_image" width={500} height={500} />
                 <span className="icon">
                   <img src="/assets/imgs/header/icon1.png" alt="" />
                 </span>
@@ -20,20 +21,53 @@ function Profile() {
                 </span>
               </div>
               <div className="info text-center mt-30">
-                <h5>Pablo Gavi</h5>
+                <h5>Esrak Fahim</h5>
                 <p className="fz-13 text-u">Available For Freelance</p>
               </div>
-              <div className="social text-center mt-20">
-                <a href="#0">
+              <div className="social text-center mt-20"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+              }}
+              >
+                <a
+                  href="#0"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+
                   <i className="fab fa-behance"></i>
                 </a>
-                <a href="#0">
+                <a href="#0"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <i className="fab fa-github"></i>
                 </a>
-                <a href="#0">
+                <a href="#0"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <i className="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#0">
+                <a href="#0"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <i className="fab fa-dribbble"></i>
                 </a>
               </div>
@@ -42,18 +76,18 @@ function Profile() {
         </div>
         <div className="col-lg-8 content main-bg">
           <h1>
-            Hello, I’m <span className="main-color">Pablo Gavi</span>, Front-end
-            Developer and{' '}
+            Hello, I’m <span className="main-color">Esrak Fahim</span>, <br /> Front-end
+            and{' '}
             <span className="bord">
-              UX / UI Designer <i></i>
+              Back-end  Developer<i></i>
             </span>{' '}
-            Based in California.
+            Based in Bangladesh.
           </h1>
           <div className="stauts mt-80">
             <div className="d-flex align-items-center">
               <div className="mr-40">
                 <div className="d-flex align-items-center">
-                  <h2>14</h2>
+                  <h2>4+</h2>
                   <p>
                     Years <br /> of Experance
                   </p>
@@ -61,7 +95,7 @@ function Profile() {
               </div>
               <div className="mr-40">
                 <div className="d-flex align-items-center">
-                  <h2>6k</h2>
+                  <h2>1k</h2>
                   <p>
                     Clients <br /> Worldwide
                   </p>

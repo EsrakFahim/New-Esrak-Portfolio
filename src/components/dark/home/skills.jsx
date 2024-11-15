@@ -1,6 +1,7 @@
 import React from 'react';
 import data2 from '@/data/home/skills2.json';
 import data from '@/data/home/skills.json';
+import Image from 'next/image';
 function Skills() {
   return (
     <div
@@ -24,7 +25,7 @@ function Skills() {
                   <div className="d-flex align-items-center mb-30">
                     <div className="mr-30">
                       <div className="img icon-img-40">
-                        <img src={item.photo} alt="" />
+                        <Image src={item.photo} alt={item?.title} width={120} height={120} />
                       </div>
                     </div>
                     <div>

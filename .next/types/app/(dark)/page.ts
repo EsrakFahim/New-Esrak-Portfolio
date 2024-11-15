@@ -1,4 +1,4 @@
-// File: /media/esrak/792EC9D601F3BDD2/personal-portfolio-resume-nextjs-template-2024-03-06-15-44-08-utc/Main_Files/gavi_nextjs/src/app/(dark)/page.jsx
+// File: /media/esrak/792EC9D601F3BDD2/esrak-next/src/app/(dark)/page.jsx
 import * as entry from '../../../../src/app/(dark)/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

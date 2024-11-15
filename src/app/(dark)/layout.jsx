@@ -3,7 +3,7 @@ import Lines from '@/components/Common/Lines';
 import React from 'react';
 
 export const metadata = {
-  title: 'Gavi - Dark',
+  title: 'Esrak Fahim',
   icons: {
     icon: '/assets/imgs/favicon.ico',
     shortcut: '/assets/imgs/favicon.ico',
