@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 function NavTop() {
@@ -7,9 +8,15 @@ function NavTop() {
       <div className="container">
         <div className="row">
           <div className="col-md-4 valign">
-            <a href="#0" className="logo icon-img-60">
-              <Image src="/assets/imgs/logo-light.png" alt="esrak_fahim" width={80} height={80} />
-            </a>
+            <Link href="#0" className="logo "
+              style={
+                {
+                  width: "140px",
+                }
+              }
+            >
+              <Image src="/Esrak_Fahim.svg" alt="esrak_fahim" width={80} height={80} />
+            </Link>
           </div>
           <div className="col-md-4 valign">
             <div className="social text-center full-width"
@@ -20,7 +27,7 @@ function NavTop() {
                 gap: "10px",
               }}
             >
-              <a href="#0"
+              <Link href="#0"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -28,8 +35,8 @@ function NavTop() {
                 }}
               >
                 <i className="fab fa-behance"></i>
-              </a>
-              <a href="#0"
+              </Link>
+              <Link href="#0"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -37,8 +44,8 @@ function NavTop() {
                 }}
               >
                 <i className="fab fa-github"></i>
-              </a>
-              <a href="#0"
+              </Link>
+              <Link href="#0"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -46,8 +53,8 @@ function NavTop() {
                 }}
               >
                 <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#0"
+              </Link>
+              <Link href="#0"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -55,15 +62,15 @@ function NavTop() {
                 }}
               >
                 <i className="fab fa-dribbble"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-md-4 valign">
             <div className="full-width info">
               <div className="d-flex justify-content-end">
-                <a href="mailto:abc@example.com">
+                <Link href="mailto:abc@example.com">
                   <span className="sub-title fz-12">esrakfahim2018@proton.me</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ function Skills() {
       data-scroll-index="2"
     >
       <div className="row">
-        <div className="col-lg-4 valign">
+        <div className="col-lg-4 ">
           <div className="sec-head md-mb80 wow fadeIn">
             <h6 className="sub-title opacity-7 mb-15">Our Skills</h6>
             <h3>
@@ -33,9 +33,9 @@ function Skills() {
                     </div>
                   </div>
                   <div className="skill-progress">
-                    <span className="progres" data-value={item.persent}></span>
+                    <span className="progres" data-value={item.percent}></span>
                   </div>
-                  <span className="value">{item.persent}</span>
+                  <span className="value">{item.percent}</span>
                 </div>
               </div>
             ))}
@@ -59,7 +59,7 @@ function Skills() {
                   </div>
                 </div>
                 <div className="img icon-img-100 mt-80 mb-30">
-                  <img src={item.photo} alt="" />
+                  <Image src={item.photo} alt={item.title} width={400} height={400} />
                 </div>
                 <h6>02x Designer Award</h6>
                 <span className="sub-title main-color mt-10">{item.title}</span>
