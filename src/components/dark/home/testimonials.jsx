@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
+import Image from 'next/image';
 
 const swiperOptions = {
   modules: [Navigation],
@@ -41,7 +42,12 @@ function Testimonials() {
                 <SwiperSlide>
                   <div className="item ">
                     <div className="icon-img-60 mr-60">
-                      <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                      <Image
+                        src="/assets/imgs/svg-assets/quote.png"
+                        alt=""
+                        width={60}
+                        height={60}
+                      />
                     </div>
 
                     <div>
@@ -71,15 +77,17 @@ function Testimonials() {
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/1.jpg" alt="" />
+                            <Image
+                              src="/assets/imgs/testim/1.jpg"
+                              alt=""
+                              width={60}
+                              height={60}
+                            />
                           </div>
                         </div>
                         <div className="ml-30">
                           <div className="info">
                             <h6 className="main-color">Leonard Heiser</h6>
-                            <span className="fz-13 mt-10 opacity-8">
-                              Envato customer
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -189,7 +197,13 @@ function Testimonials() {
           </div>
         </div>
       </div>
-      <span className="icon-qoute">
+      <span className="icon-qoute"
+      style={{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+      }}
+      >
         <i className="fas fa-quote-left"></i>
       </span>
     </div>

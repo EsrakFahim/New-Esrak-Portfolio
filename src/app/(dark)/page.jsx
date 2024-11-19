@@ -33,7 +33,7 @@ function Dark() {
             <Services />
             <Skills />
             <Portfolio />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <Price />
             <Info />
             <Blog />

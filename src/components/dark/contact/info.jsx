@@ -1,6 +1,20 @@
+'use client';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 function Info() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data); // Replace this with your API call logic
+    reset(); // Reset form after submission
+  };
+
   return (
     <div
       className="sec-box contact section-padding bord-thin-top"
@@ -16,8 +30,8 @@ function Info() {
               we’d love to hear from you!
             </p>
             <div className="phone fz-30 fw-600 mt-30 underline">
-              <a href="#0" className="main-color">
-                +1 840 841 25 69
+              <a href="tel:+18408412569" className="main-color">
+                +880 17590-44987
               </a>
             </div>
             <ul className="rest social-text d-flex mt-60">
@@ -46,40 +60,48 @@ function Info() {
         </div>
         <div className="col-lg-7 valign">
           <div className="full-width wow fadeIn">
-            <form id="contact-form" method="post" action="contact.php">
-              <div className="messages"></div>
-
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="controls row">
                 <div className="col-lg-6">
                   <div className="form-group mb-30">
                     <input
-                      id="form_name"
                       type="text"
-                      name="name"
+                      {...register('name', { required: 'Name is required' })}
                       placeholder="Name"
-                      required="required"
+                      className={errors.name ? 'error' : ''}
                     />
+                    {errors.name && (
+                      <small className="error-text">{errors.name.message}</small>
+                    )}
                   </div>
                 </div>
 
                 <div className="col-lg-6">
                   <div className="form-group mb-30">
                     <input
-                      id="form_email"
                       type="email"
-                      name="email"
+                      {...register('email', {
+                        required: 'Email is required',
+                        pattern: {
+                          value:
+                            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                          message: 'Invalid email address',
+                        },
+                      })}
                       placeholder="Email"
-                      required="required"
+                      className={errors.email ? 'error' : ''}
                     />
+                    {errors.email && (
+                      <small className="error-text">{errors.email.message}</small>
+                    )}
                   </div>
                 </div>
 
                 <div className="col-12">
                   <div className="form-group mb-30">
                     <input
-                      id="form_subject"
                       type="text"
-                      name="subject"
+                      {...register('subject')}
                       placeholder="Subject"
                     />
                   </div>
@@ -88,15 +110,21 @@ function Info() {
                 <div className="col-12">
                   <div className="form-group">
                     <textarea
-                      id="form_message"
-                      name="message"
+                      {...register('message', {
+                        required: 'Message is required',
+                      })}
                       placeholder="Message"
                       rows="4"
-                      required="required"
+                      className={errors.message ? 'error' : ''}
                     ></textarea>
+                    {errors.message && (
+                      <small className="error-text">
+                        {errors.message.message}
+                      </small>
+                    )}
                   </div>
                   <div className="mt-30">
-                    <button type="submit">
+                    <button type="submit" className="main-btn">
                       <span className="text">Send A Message</span>
                     </button>
                   </div>
