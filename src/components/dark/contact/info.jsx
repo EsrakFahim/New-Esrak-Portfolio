@@ -1,8 +1,9 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 function Info() {
+  const [clientIP, setClientIP] = React.useState(null);
   const {
     register,
     handleSubmit,
@@ -10,11 +11,52 @@ function Info() {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data); // Replace this with your API call logic
-    reset(); // Reset form after submission
-  };
 
+  // Fetch client's IP address
+  useEffect(() => {
+    const fetchIP = async () => {
+      try {
+        const res = await axios.get(
+          "https://api.ipify.org?format=json"
+        );
+        setClientIP(res.data.ip); // Set the client's IP
+      } catch (error) {
+        console.error("Error fetching client IP:", error);
+      }
+    };
+
+    fetchIP();
+  }, []);
+
+  const handleFormDetails = async (data) => {
+    setMessageLoading(true);
+    try {
+      const res = await axios.post(
+        "https://portfolio-backend-lime-seven.vercel.app/api/v1/client/",
+        {
+          clientName: data.name,
+          clientEmail: data.email,
+          reqService: data.subject,
+          clientMessage: data.message,
+          clientIP: clientIP, // Send the client's IP
+        }
+      );
+      console.log(res);
+      // Handle success
+      if (res.status === 200) {
+        alert("Form submitted successfully!");
+        setMessageLoading(false); // Stop loading
+        reset(); // Reset the form if using react-hook-form's reset function
+      }
+    } catch (error) {
+      // Handle error
+      console.error("Error submitting the form:", error);
+      alert(
+        "There was an issue submitting the form. Please try again."
+      );
+      setMessageLoading(false); // Stop loading
+    }
+  };
   return (
     <div
       className="sec-box contact section-padding bord-thin-top"
@@ -60,7 +102,7 @@ function Info() {
         </div>
         <div className="col-lg-7 valign">
           <div className="full-width wow fadeIn">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(handleFormDetails)}>
               <div className="controls row">
                 <div className="col-lg-6">
                   <div className="form-group mb-30">

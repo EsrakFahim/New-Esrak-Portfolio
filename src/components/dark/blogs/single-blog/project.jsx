@@ -148,7 +148,7 @@ function Project() {
                   </div>
                   <div>
                     <a href="#">Tech</a>
-                    <a href="#">Gavi</a>
+                    <a href="#">Esrak</a>
                   </div>
                 </div>
               </div>

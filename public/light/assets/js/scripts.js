@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
 
-    Theme Name: Gavi
+    Theme Name: Esrak
     Theme URI: http://
     Description: Creative Personal & Portfolio
     Author: UiCamp
