@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 
 function Info() {
   const [clientIP, setClientIP] = React.useState(null);
+  const [messageLoading, setMessageLoading] = React.useState(false);
   const {
     register,
     handleSubmit,
@@ -167,9 +168,16 @@ function Info() {
                     )}
                   </div>
                   <div className="mt-30">
-                    <button type="submit" className="main-btn">
-                      <span className="text">Click here Get a  message</span>
+                    <button
+                      type="submit"
+                      className="main-btn"
+                      disabled={messageLoading} // Properly conditionally disable the button
+                    >
+                      <span className="text">
+                        {messageLoading ? 'Loading...' : 'Send Message'}
+                      </span>
                     </button>
+
                   </div>
                 </div>
               </div>
