@@ -167,7 +167,7 @@ function Info() {
                   </div>
                   <div className="mt-30">
                     <button type="submit" className="main-btn">
-                      <span className="text">Send A Message</span>
+                      <span className="text">Click here Get a  message</span>
                     </button>
                   </div>
                 </div>

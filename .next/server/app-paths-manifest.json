@@ -1,1 +1,3 @@
-{}
+{
+  "/(dark)/page": "app/(dark)/page.js"
+}
