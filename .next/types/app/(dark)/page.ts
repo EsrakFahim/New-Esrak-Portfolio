@@ -1,4 +1,4 @@
-// File: /media/esrak/792EC9D601F3BDD2/esrak-next/src/app/(dark)/page.jsx
+// File: /home/esrak/Desktop/New-Esrak-Portfolio-main/New-Esrak-Portfolio-main/src/app/(dark)/page.jsx
 import * as entry from '../../../../src/app/(dark)/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

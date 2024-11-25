@@ -10,10 +10,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(dark)/layout.js"
     ],
-    "/(dark)/works/single-project/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(dark)/works/single-project/page.js"
+      "static/chunks/app/not-found.js"
     ]
   }
 }
