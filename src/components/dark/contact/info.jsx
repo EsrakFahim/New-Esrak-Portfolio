@@ -31,6 +31,8 @@ function Info() {
     fetchIP();
   }, []);
 
+  import axios from "axios";
+
   const handleFormDetails = async (data) => {
     setMessageLoading(true);
     try {
@@ -41,13 +43,19 @@ function Info() {
           clientEmail: data.email,
           reqService: data.subject,
           clientMessage: data.message,
-          clientIP: clientIP || "Unavailable", // Use fallback IP
+          clientIP: clientIP || "Unavailable", // Fallback for IP
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true, // Include credentials
         }
       );
 
       if (res.status === 200) {
         alert("Form submitted successfully!");
-        reset(); // Reset form
+        reset(); // Reset form after success
       } else {
         alert("Unexpected response from server.");
       }
@@ -58,6 +66,7 @@ function Info() {
       setMessageLoading(false); // Stop loading regardless of outcome
     }
   };
+
 
 
 
