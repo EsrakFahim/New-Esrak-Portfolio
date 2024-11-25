@@ -34,7 +34,7 @@ function Info() {
     setMessageLoading(true);
     try {
       const res = await axios.post(
-        "https://portfolio-backend-lime-seven.vercel.app/api/v1/client/",
+        "http://localhost:5000/api/v1/client/",
         {
           clientName: data.name,
           clientEmail: data.email,
