@@ -31,7 +31,10 @@ function Info() {
     fetchIP();
   }, []);
 
+<<<<<<< HEAD
   import axios from "axios";
+=======
+>>>>>>> aefbffa (add initial stylesheets, configuration files, and components)
 
   const handleFormDetails = async (data) => {
     setMessageLoading(true);
