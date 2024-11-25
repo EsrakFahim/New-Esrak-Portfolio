@@ -1,11 +1,11 @@
 'use client';
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 function Info() {
-  const [clientIP, setClientIP] = React.useState(null);
-  const [messageLoading, setMessageLoading] = React.useState(false);
+  const [clientIP, setClientIP] = useState(null);
+  const [messageLoading, setMessageLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -16,16 +16,17 @@ function Info() {
 
   // Fetch client's IP address
   useEffect(() => {
+    // Enhanced fetchIP error handling
     const fetchIP = async () => {
       try {
-        const res = await axios.get(
-          "https://api.ipify.org?format=json"
-        );
-        setClientIP(res.data.ip); // Set the client's IP
+        const res = await axios.get("https://api.ipify.org?format=json");
+        setClientIP(res.data.ip);
       } catch (error) {
         console.error("Error fetching client IP:", error);
+        setClientIP("Unavailable"); // Fallback value
       }
     };
+
 
     fetchIP();
   }, []);
@@ -40,25 +41,26 @@ function Info() {
           clientEmail: data.email,
           reqService: data.subject,
           clientMessage: data.message,
-          clientIP: clientIP, // Send the client's IP
+          clientIP: clientIP || "Unavailable", // Use fallback IP
         }
       );
-      console.log(res);
-      // Handle success
+
       if (res.status === 200) {
         alert("Form submitted successfully!");
-        setMessageLoading(false); // Stop loading
-        reset(); // Reset the form if using react-hook-form's reset function
+        reset(); // Reset form
+      } else {
+        alert("Unexpected response from server.");
       }
     } catch (error) {
-      // Handle error
       console.error("Error submitting the form:", error);
-      alert(
-        "There was an issue submitting the form. Please try again."
-      );
-      setMessageLoading(false); // Stop loading
+      alert("There was an issue submitting the form. Please try again.");
+    } finally {
+      setMessageLoading(false); // Stop loading regardless of outcome
     }
   };
+
+
+
   return (
     <div
       className="sec-box contact section-padding bord-thin-top"
