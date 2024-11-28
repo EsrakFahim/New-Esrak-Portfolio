@@ -52,23 +52,11 @@ function Info() {
           withCredentials: true, // Include credentials
         }
       );
-      console.log(res);
-
-      if (res.status === 200) {
-        alert("Form submitted successfully!");
-        reset(); // Reset form after success
-      } else {
-        alert("Unexpected response from server.");
-      }
+      console.log("Response received:", res); // Log the response
     } catch (error) {
-      console.error("Error submitting the form:", error);
-      alert("There was an issue submitting the form. Please try again.");
-    } finally {
-      setMessageLoading(false); // Stop loading regardless of outcome
+      console.error("Axios call error:", error);
     }
   };
-
-
 
 
   return (
