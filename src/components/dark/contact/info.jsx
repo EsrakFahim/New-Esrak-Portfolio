@@ -33,6 +33,7 @@ function Info() {
   const baseURL = 'http://localhost:5000'
 
   const handleFormDetails = async (data) => {
+    console.log('Handle called');
     setMessageLoading(true);
     try {
       const res = await axios.post(
@@ -51,6 +52,7 @@ function Info() {
           withCredentials: true, // Include credentials
         }
       );
+      console.log(res);
 
       if (res.status === 200) {
         alert("Form submitted successfully!");
