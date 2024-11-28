@@ -1,3 +1,5 @@
+'use client'
+
 import ProgressScroll from '@/components/Common/ProgressScroll';
 import Cursor from '@/components/Common/cusor';
 import LoadingScreen from '@/components/Common/loader';
@@ -14,9 +16,16 @@ import Services from '@/components/dark/home/services';
 import Skills from '@/components/dark/home/skills';
 import Testimonials from '@/components/dark/home/testimonials';
 import Script from 'next/script';
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 function Dark() {
+
+  useEffect(() => {
+    const res = axios.get('http://localhost:5000/api/v1/project');
+    console.log(res);
+  }, [])
+
   return (
     <div>
       <Cursor />
