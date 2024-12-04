@@ -92,22 +92,22 @@ function Info() {
             </div>
             <ul className="rest social-text d-flex mt-60">
               <li className="mr-30">
-                <a href="#0" className="hover-this">
+                <a href="https://www.facebook.com/esrak.fahim.52/" className="hover-this">
                   <span className="hover-anim">Facebook</span>
                 </a>
               </li>
               <li className="mr-30">
-                <a href="#0" className="hover-this">
-                  <span className="hover-anim">Twitter</span>
+                <a href="https://github.com/EsrakFahim" className="hover-this">
+                  <span className="hover-anim">Github</span>
                 </a>
               </li>
               <li className="mr-30">
-                <a href="#0" className="hover-this">
+                <a href="https://www.linkedin.com/in/esrakfahim18/" className="hover-this">
                   <span className="hover-anim">LinkedIn</span>
                 </a>
               </li>
               <li>
-                <a href="#0" className="hover-this">
+                <a href="https://www.instagram.com/iamesrak/" className="hover-this">
                   <span className="hover-anim">Instagram</span>
                 </a>
               </li>

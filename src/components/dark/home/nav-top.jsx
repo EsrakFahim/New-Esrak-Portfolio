@@ -27,16 +27,16 @@ function NavTop() {
                 gap: "10px",
               }}
             >
-              <Link href="#0"
+              <Link href="https://www.facebook.com/esrak.fahim.52/"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <i className="fab fa-behance"></i>
+                <i className="fab fa-facebook"></i>
               </Link>
-              <Link href="#0"
+              <Link href="https://github.com/EsrakFahim"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -45,7 +45,7 @@ function NavTop() {
               >
                 <i className="fab fa-github"></i>
               </Link>
-              <Link href="#0"
+              <Link href="https://www.linkedin.com/in/esrakfahim18/"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -54,14 +54,14 @@ function NavTop() {
               >
                 <i className="fab fa-linkedin-in"></i>
               </Link>
-              <Link href="#0"
+              <Link href="https://www.instagram.com/iamesrak/"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <i className="fab fa-dribbble"></i>
+                <i className="fab fa-instagram"></i>
               </Link>
             </div>
           </div>

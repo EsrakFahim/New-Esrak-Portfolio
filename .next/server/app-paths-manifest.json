@@ -1,5 +1,1 @@
-{
-  "/not-found": "app/not-found.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(dark)/page": "app/(dark)/page.js"
-}
+{}
